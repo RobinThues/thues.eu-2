@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Robin Thüs</title>
+    <title>Contact - Robin Thüs</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/5.5.0/firebase-app.js"></script>
@@ -19,8 +19,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
-<body style="background-image: url('img/bkg-1.jpg')">
-
+<body style="background-image: url('img/bkg-2.jpeg')">
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 shadow">
     <div class="container">
         <a class="navbar-brand green" href="/">Robin Thüs</a>
@@ -31,14 +30,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/exp">Experience</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/contact">Contact <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -50,23 +49,32 @@
         <div class="col-8">
             <div class="card mb-3 shadow border-green">
                 <div class="card-body">
-                    <h5 class="card-title">Software Engineering</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card mb-3 shadow border-green">
-                <div class="card-body">
-                    <h5 class="card-title">Consulting</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card shadow border-green">
-                <div class="card-body">
-                    <h5 class="card-title">Anything else</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <h5 class="card-title">Contact</h5>
+                    <p class="card-text">
+                        Feel free to reach out to me.
+                    </p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="email" class="form-control" id="name"
+                                   placeholder="Merlin">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email Address</label>
+                            <input type="email" class="form-control" id="email"
+                                   placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control"
+                                   placeholder="I need help with my website">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button class="btn btn-green" type="submit">Send</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -103,28 +111,5 @@
     </div>
 </footer>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-            let app = firebase.app();
-            let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-            document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-            console.error(e);
-            document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-    });
-</script>
 </body>
 </html>
