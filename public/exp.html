@@ -59,14 +59,15 @@
                         and improve stream quality.<br>
                         I am mostly working with the Google Cloud Platform, Python, GoLang and JavaScript.
                     </p>
+                    <hr>
                     <h5>Head of department IT</h5>
                     <p class="card-text">
                         Between January 2017 and March 2018 I was working as the head of it for Heinrich Heine
                         Consulting.<br>
                         I was responsible for internal IT projects and administration. My team consisted of six student
                         consultants.
-
                     </p>
+                    <hr>
                     <h5>Consultant</h5>
                     <p class="card-text">
                         Since Mai 2016 I'm in the local student consulting organization <a
@@ -79,7 +80,7 @@
             </div>
             <div class="card shadow border-green">
                 <div class="card-body">
-                    <h5 class="card-title">University Life</h5>
+                    <h4 class="card-title">University Life</h4>
                     <p class="card-text">
                         I've studied computer science at the university of Duesseldorf.<br>
                         The focus of my studies was on networking and distributed systems.<br>
@@ -103,7 +104,7 @@
     </div>
 </div>
 
-<footer class="footer">
+<footer class="footer border-green border-top" style="background-color: lightgray;">
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -122,28 +123,5 @@
     </div>
 </footer>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-            let app = firebase.app();
-            let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-            document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-            console.error(e);
-            document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-    });
-</script>
 </body>
 </html>
