@@ -6,11 +6,12 @@
     <title>Contact - Robin Thüs</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.5.0/firebase-app.js"></script>
+    <script src="/__/firebase/5.5.0/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.5.0/firebase-storage.js"></script>
+    <script src="/__/firebase/5.5.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/5.5.0/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+    <script src="/__/firebase/init.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/sticky-footer.css">
@@ -56,24 +57,24 @@
                     <form action="#" method="post">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="email" class="form-control" id="name"
+                            <input type="text" class="form-control" id="name" required
                                    placeholder="Merlin">
                         </div>
                         <div class="form-group">
                             <label for="email">Your Email Address</label>
-                            <input type="email" class="form-control" id="email"
+                            <input type="email" class="form-control" id="email" required
                                    placeholder="name@example.com">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control"
+                            <input type="text" id="subject" class="form-control" required
                                    placeholder="I need help with my website">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Message</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" required rows="3"></textarea>
                         </div>
-                        <button class="btn btn-green" type="submit">Send</button>
+                        <button class="btn btn-green" id="send-button" type="submit">Send</button>
                     </form>
                 </div>
             </div>
@@ -83,8 +84,10 @@
                 <img class="card-img-top" src="img/robin-thues-1.jpg" alt="Portrait of Robin">
                 <div class="card-body">
                     <h5 class="card-title">Robin Thüs</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-text">
+                        Passionate about technology, eager to learn new things and glad to help.
+                        Tell me your story and let's see where that leads us.
+                    </p>
                     <a href="/contact" class="btn btn-green">Contact</a>
                 </div>
             </div>
@@ -110,6 +113,24 @@
         </div>
     </div>
 </footer>
+
+<script>
+    document.getElementById('send-button').addEventListener('click', event => {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        if (name !== '' && email !== '' && subject !== '' && message !== '') {
+            const timestamp = Math.floor(Date.now() / 1000);
+
+            firebase.database().ref('contacts').once('value', snapshot => {
+                var contacts = snapshot.numChildren();
+                contacts++;
+            })
+        }
+    })
+</script>
 
 </body>
 </html>
